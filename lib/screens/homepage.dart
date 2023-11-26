@@ -1,6 +1,8 @@
+import 'package:cardtrick/cubits/counter/counter_cubit.dart';
 import 'package:cardtrick/cubits/instruction/instruction_cubit.dart';
 import 'package:cardtrick/widgets/showbutton.dart';
 import 'package:cardtrick/widgets/showcards.dart';
+import 'package:cardtrick/widgets/showfinalcard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,7 +34,18 @@ class HomePage extends StatelessWidget {
                 constraints: BoxConstraints.expand(),
                 child: Column(
                   children: [
-                    Flexible(flex: 92, child: ShowCards()),
+                    BlocBuilder<CounterCubit, CounterState>(
+                      builder: (context, state) {
+                        return Flexible(
+                            flex: 92,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.green,
+                                  borderRadius: BorderRadius.circular(10)),
+                                  child: state.counter==3? ShowFinalCard(): ShowCards(),
+                            ));
+                      },
+                    ),
                     Flexible(flex: 8, child: ShowButton()),
                   ],
                 ))),

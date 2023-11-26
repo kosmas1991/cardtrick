@@ -1,3 +1,6 @@
+import 'package:cardtrick/cubits/buttonMode/button_mode_cubit.dart';
+import 'package:cardtrick/cubits/counter/counter_cubit.dart';
+import 'package:cardtrick/cubits/current21Deck/current21_deck_cubit.dart';
 import 'package:cardtrick/cubits/instruction/instruction_cubit.dart';
 import 'package:cardtrick/screens/homepage.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +19,15 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => InstructionCubit(),
+        ),
+        BlocProvider<Current21DeckCubit>(
+          create: (context) => Current21DeckCubit(),
+        ),
+        BlocProvider<ButtonModeCubit>(
+          create: (context) => ButtonModeCubit(),
+        ),
+        BlocProvider<CounterCubit>(
+          create: (context) => CounterCubit(),
         ),
       ],
       child: MaterialApp(
