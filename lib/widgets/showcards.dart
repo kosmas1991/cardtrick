@@ -1,10 +1,8 @@
-import 'package:cardtrick/models/21pickedcards.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class ShowCards extends StatelessWidget {
-  final List<Cards> cards;
-  const ShowCards({required this.cards, super.key});
+  const ShowCards({super.key});
 
   @override
   Widget build(BuildContext context) {
