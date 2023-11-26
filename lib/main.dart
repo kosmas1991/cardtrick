@@ -17,14 +17,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<CounterCubit>(
+          create: (context) => CounterCubit(),
+        ),
         BlocProvider(
-          create: (context) => InstructionCubit(),
+          create: (context) =>
+              InstructionCubit(counterCubit: context.read<CounterCubit>()),
         ),
         BlocProvider<Current21DeckCubit>(
           create: (context) => Current21DeckCubit(),
-        ),
-        BlocProvider<CounterCubit>(
-          create: (context) => CounterCubit(),
         ),
         BlocProvider<ButtonModeCubit>(
           create: (context) =>

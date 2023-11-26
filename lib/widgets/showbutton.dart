@@ -89,6 +89,9 @@ Container restartButton(BuildContext context) {
     child: TextButton(
         onPressed: () {
           context.read<CounterCubit>().setToZero();
+          context
+              .read<InstructionCubit>()
+              .emitNewInstruction('Memorize one card');
         },
         child: Text(
           '< Restart',
