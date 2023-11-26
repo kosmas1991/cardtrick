@@ -23,11 +23,12 @@ class MyApp extends StatelessWidget {
         BlocProvider<Current21DeckCubit>(
           create: (context) => Current21DeckCubit(),
         ),
-        BlocProvider<ButtonModeCubit>(
-          create: (context) => ButtonModeCubit(),
-        ),
         BlocProvider<CounterCubit>(
           create: (context) => CounterCubit(),
+        ),
+        BlocProvider<ButtonModeCubit>(
+          create: (context) =>
+              ButtonModeCubit(counterCubit: context.read<CounterCubit>()),
         ),
       ],
       child: MaterialApp(

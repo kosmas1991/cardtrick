@@ -87,7 +87,9 @@ Container restartButton(BuildContext context) {
     color: Colors.white,
     constraints: BoxConstraints.expand(),
     child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          context.read<CounterCubit>().setToZero();
+        },
         child: Text(
           '< Restart',
           style: TextStyle(fontSize: 25, color: Colors.black),
