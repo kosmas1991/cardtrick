@@ -1,5 +1,4 @@
 import 'package:cardtrick/cubits/current21Deck/current21_deck_cubit.dart';
-import 'package:cardtrick/models/deck21.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:playing_cards/playing_cards.dart';
@@ -9,7 +8,6 @@ class ShowCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       child: BlocBuilder<Current21DeckCubit, Current21DeckState>(
         builder: (context, state) {
