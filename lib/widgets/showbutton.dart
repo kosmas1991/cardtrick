@@ -39,9 +39,21 @@ Container oneButton(BuildContext context) {
               .read<InstructionCubit>()
               .emitNewInstruction('At which column is your card?');
         },
-        child: Text(
-          'Continue >',
-          style: TextStyle(fontSize: 25, color: Colors.black),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Continue',
+              style: TextStyle(fontSize: 25, color: Colors.black),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Icon(
+              Icons.start,
+              size: 40,
+            )
+          ],
         )),
   );
 }
@@ -93,9 +105,18 @@ Container restartButton(BuildContext context) {
               .read<InstructionCubit>()
               .emitNewInstruction('Memorize one card');
         },
-        child: Text(
-          '< Restart',
-          style: TextStyle(fontSize: 25, color: Colors.black),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.restart_alt, size: 40),
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              'Restart',
+              style: TextStyle(fontSize: 25, color: Colors.black),
+            ),
+          ],
         )),
   );
 }

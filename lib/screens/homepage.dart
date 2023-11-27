@@ -5,6 +5,7 @@ import 'package:cardtrick/widgets/showcards.dart';
 import 'package:cardtrick/widgets/showfinalcard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:scroll_loop_auto_scroll/scroll_loop_auto_scroll.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,9 +22,15 @@ class HomePage extends StatelessWidget {
                 color: Colors.black,
                 constraints: BoxConstraints.expand(),
                 child: Center(
-                  child: Text(
-                    '${context.watch<InstructionCubit>().state.instruction}',
-                    style: TextStyle(color: Colors.yellow, fontSize: 20),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 80),
+                    child: ScrollLoopAutoScroll(
+                      scrollDirection: Axis.horizontal,
+                      child: Text(
+                        '${context.watch<InstructionCubit>().state.instruction}',
+                        style: TextStyle(color: Colors.yellow, fontSize: 20),
+                      ),
+                    ),
                   ),
                 ))),
         Flexible(
@@ -42,7 +49,9 @@ class HomePage extends StatelessWidget {
                               decoration: BoxDecoration(
                                   color: Colors.green,
                                   borderRadius: BorderRadius.circular(10)),
-                                  child: state.counter==3? ShowFinalCard(): ShowCards(),
+                              child: state.counter == 3
+                                  ? ShowFinalCard()
+                                  : ShowCards(),
                             ));
                       },
                     ),

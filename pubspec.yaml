@@ -40,6 +40,8 @@ dependencies:
   transparent_image: ^2.0.1
   http: ^1.1.0
   playing_cards: ^0.4.1+11
+  text_scroll: ^0.2.0
+  scroll_loop_auto_scroll: ^0.0.5
 
 dev_dependencies:
   flutter_test:

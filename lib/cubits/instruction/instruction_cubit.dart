@@ -16,6 +16,12 @@ class InstructionCubit extends Cubit<InstructionState> {
       if (counterState.counter == 3) {
         emit(state.copyWith(instruction: 'Your card is shown below'));
       }
+            if (counterState.counter == 1) {
+        emit(state.copyWith(instruction: 'Show me again'));
+      }
+            if (counterState.counter == 2) {
+        emit(state.copyWith(instruction: 'One last time'));
+      }
     });
   }
 
