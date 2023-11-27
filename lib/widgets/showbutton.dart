@@ -4,6 +4,7 @@ import 'package:cardtrick/cubits/current21Deck/current21_deck_cubit.dart';
 import 'package:cardtrick/cubits/instruction/instruction_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_vibrate/flutter_vibrate.dart';
 
 class ShowButton extends StatelessWidget {
   const ShowButton({super.key});
@@ -69,8 +70,8 @@ Container threeButtons(BuildContext context) {
           },
           icon: Icon(
             color: Colors.amber,
-            Icons.arrow_circle_up,
-            size: 30,
+            Icons.arrow_upward,
+            size: 40,
           )),
       IconButton(
           onPressed: () {
@@ -78,8 +79,8 @@ Container threeButtons(BuildContext context) {
           },
           icon: Icon(
             color: Colors.amber,
-            Icons.arrow_circle_up,
-            size: 30,
+            Icons.arrow_upward,
+            size: 40,
           )),
       IconButton(
           color: Colors.amber,
@@ -87,8 +88,8 @@ Container threeButtons(BuildContext context) {
             threeButtonsPressed(context, 'right');
           },
           icon: Icon(
-            Icons.arrow_circle_up,
-            size: 30,
+            Icons.arrow_upward,
+            size: 40,
           )),
     ]),
   );
@@ -126,11 +127,14 @@ threeButtonsPressed(BuildContext context, String button) {
     case 'left':
       context.read<Current21DeckCubit>().leftButtonPressed();
       context.read<CounterCubit>().addOne();
+      Vibrate.feedback(FeedbackType.impact);
     case 'middle':
       context.read<Current21DeckCubit>().middleButtonPressed();
       context.read<CounterCubit>().addOne();
+      Vibrate.feedback(FeedbackType.impact);
     case 'right':
       context.read<Current21DeckCubit>().rightButtonPressed();
       context.read<CounterCubit>().addOne();
+      Vibrate.feedback(FeedbackType.impact);
   }
 }
