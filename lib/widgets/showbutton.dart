@@ -44,7 +44,7 @@ Container oneButton(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Continue',
+              'Start',
               style: TextStyle(fontSize: 25, color: Colors.black),
             ),
             SizedBox(
