@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1054463304738",
+    "project_id": "cardtrick-acea0",
+    "storage_bucket": "cardtrick-acea0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054463304738:android:7c53b61e04dc5ab684567b",
+        "android_client_info": {
+          "package_name": "gr.techzombie.cardtrick"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2s6RSKlM_YXTBAgxppxUCt_OYmtTKUB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

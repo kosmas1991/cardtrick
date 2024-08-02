@@ -39,6 +39,16 @@ Container oneButton(BuildContext context) {
           context
               .read<InstructionCubit>()
               .emitNewInstruction('At which column is your card?');
+          try {
+            throw Exception();
+          } on Exception catch (_) {
+            print('error2');
+          }
+          try {
+            throw Exception();
+          } on Exception catch (_) {
+            print('error2');
+          }
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

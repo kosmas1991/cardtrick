@@ -36,28 +36,34 @@ class HomePage extends StatelessWidget {
         Flexible(
             flex: 100,
             child: Container(
-                padding: EdgeInsets.all(10),
-                color: Colors.white,
-                constraints: BoxConstraints.expand(),
-                child: Column(
-                  children: [
-                    BlocBuilder<CounterCubit, CounterState>(
-                      builder: (context, state) {
-                        return Flexible(
-                            flex: 92,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.green,
-                                  borderRadius: BorderRadius.circular(10)),
-                              child: state.counter == 3
-                                  ? ShowFinalCard()
-                                  : ShowCards(),
-                            ));
-                      },
-                    ),
-                    Flexible(flex: 8, child: ShowButton()),
-                  ],
-                ))),
+              color: Colors.black,
+              child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  padding: EdgeInsets.all(10),
+                  constraints: BoxConstraints.expand(),
+                  child: Column(
+                    children: [
+                      BlocBuilder<CounterCubit, CounterState>(
+                        builder: (context, state) {
+                          return Flexible(
+                              flex: 92,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: state.counter == 3
+                                    ? ShowFinalCard()
+                                    : ShowCards(),
+                              ));
+                        },
+                      ),
+                      Flexible(flex: 8, child: ShowButton()),
+                    ],
+                  )),
+            )),
         Flexible(
             flex: 5,
             child: Container(

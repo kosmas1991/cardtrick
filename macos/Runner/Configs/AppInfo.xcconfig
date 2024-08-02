@@ -8,7 +8,7 @@
 PRODUCT_NAME = cardtrick
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.cardtrick
+PRODUCT_BUNDLE_IDENTIFIER = gr.techzombie.cardtrick
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2023 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 gr.techzombie. All rights reserved.
